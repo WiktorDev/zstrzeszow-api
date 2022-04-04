@@ -12,3 +12,8 @@ https://zstapi.wiktor.tech/
 ```
 /api/posts
 ```
+
+##### Lista kierunkow
+```
+/api/profiles
+```
