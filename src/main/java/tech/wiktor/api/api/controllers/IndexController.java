@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.wiktor.api.api.managers.PostsManager;
+import tech.wiktor.api.api.managers.ProfilesManager;
 import tech.wiktor.api.api.objects.Post;
+import tech.wiktor.api.api.objects.Profile;
 import tech.wiktor.api.api.utils.Scrap;
 
 import java.util.HashMap;
@@ -25,7 +27,13 @@ public class IndexController {
 
     @GetMapping(path = "/posts", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Post> posts(){
-        new PostsManager();
+        new PostsManager().init();
         return PostsManager.getPosts();
+    }
+
+    @GetMapping(path = "/profiles", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Profile> profiles(){
+        new ProfilesManager().init();
+        return ProfilesManager.getProfiles();
     }
 }
