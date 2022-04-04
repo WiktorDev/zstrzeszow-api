@@ -7,7 +7,8 @@ https://zstapi.wiktor.tech/
 ```
 
 ## Endpoints
+
+##### Lista postow z glownej strony
 ```
 /api/posts
 ```
-#### Lista postow z glownej strony
