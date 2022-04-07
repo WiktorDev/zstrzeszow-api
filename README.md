@@ -17,3 +17,8 @@ https://zstapi.wiktor.tech/
 ```
 /api/profiles
 ```
+
+##### Lista nauczycieli
+```
+/api/teachers
+```
