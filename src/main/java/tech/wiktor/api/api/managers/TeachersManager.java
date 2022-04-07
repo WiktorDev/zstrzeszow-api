@@ -18,6 +18,7 @@ public class TeachersManager {
     }
 
     public void init(){
+        if(!teachers.isEmpty()) teachers.clear();
         try {
             Document Doc = Jsoup.connect("http://zstrzeszow.pl/kadra.php/").get();
             Elements elements = Doc.select("div > table tbody tr");

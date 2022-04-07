@@ -17,6 +17,7 @@ public class PostsManager {
     }
 
     public void init(){
+        if(!posts.isEmpty()) posts.clear();
         try {
             Document Doc = Jsoup.connect("http://zstrzeszow.pl/").get();
             Elements elements = Doc.select("div.newsy > div");

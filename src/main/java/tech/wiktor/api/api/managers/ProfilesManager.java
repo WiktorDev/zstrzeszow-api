@@ -18,6 +18,7 @@ public class ProfilesManager {
     }
 
     public void init(){
+        if(!profiles.isEmpty()) profiles.clear();
         try {
             Document Doc = Jsoup.connect("http://zstrzeszow.pl/").get();
             Elements elements = Doc.select("div#three-column > div");
