@@ -22,3 +22,11 @@ https://zstapi.wiktor.tech/
 ```
 /api/teachers
 ```
+
+##### Plan lekcji danej klasy
+```
+/api/plan/{class}
+
+Example:
+/api/plan/1ct
+```
