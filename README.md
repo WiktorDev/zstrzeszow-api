@@ -1,5 +1,5 @@
 # zstrzeszow-api
-Potezne API dla strony zstrzeszow.pl oraz planu lekcji
+Potezne API dla strony zstrzeszow.pl oraz planu lekcji ( ͡° ͜ʖ ͡°)
 
 ## Adres API
 ```
