@@ -27,26 +27,26 @@ public class IndexController {
     }
 
     @GetMapping(path = "/posts", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Post> posts(){
+    public ResponseEntity<List<Post>> posts(){
         new PostsManager().init();
-        return PostsManager.getPosts();
+        return new ResponseEntity<>(PostsManager.getPosts(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/profiles", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Profile> profiles(){
+    public ResponseEntity<List<Profile>> profiles(){
         new ProfilesManager().init();
-        return ProfilesManager.getProfiles();
+        return new ResponseEntity<>(ProfilesManager.getProfiles(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/teachers", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Teacher> teachers(){
+    public ResponseEntity<List<Teacher>> teachers(){
         new TeachersManager().init();
-        return TeachersManager.getTeachers();
+        return new ResponseEntity<>(TeachersManager.getTeachers(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/plan/{class}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<LessonPlan> plans(@PathVariable("class") String name){
+    public ResponseEntity<List<LessonPlan>> plans(@PathVariable("class") String name){
         new LessonPlanManager().init(name);
-        return LessonPlanManager.getList();
+        return new ResponseEntity<>(LessonPlanManager.getList(), HttpStatus.OK);
     }
 }
