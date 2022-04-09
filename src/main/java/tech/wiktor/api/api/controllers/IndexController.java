@@ -3,12 +3,12 @@ package tech.wiktor.api.api.controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import tech.wiktor.api.api.managers.LessonPlanManager;
 import tech.wiktor.api.api.managers.PostsManager;
 import tech.wiktor.api.api.managers.ProfilesManager;
 import tech.wiktor.api.api.managers.TeachersManager;
+import tech.wiktor.api.api.objects.LessonPlan;
 import tech.wiktor.api.api.objects.Post;
 import tech.wiktor.api.api.objects.Profile;
 import tech.wiktor.api.api.objects.Teacher;
@@ -42,5 +42,11 @@ public class IndexController {
     public List<Teacher> teachers(){
         new TeachersManager().init();
         return TeachersManager.getTeachers();
+    }
+
+    @GetMapping(path = "/plan/{class}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<LessonPlan> plans(@PathVariable("class") String name){
+        new LessonPlanManager().init(name);
+        return LessonPlanManager.getList();
     }
 }
