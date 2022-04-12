@@ -30,3 +30,9 @@ https://zstapi.wiktor.tech/
 Example:
 /api/plan/1ct
 ```
+
+##### TODO list
+```
+- PSO
+
+```
